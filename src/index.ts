@@ -2,6 +2,10 @@ import { Application, Context } from 'probot' // eslint-disable-line no-unused-v
 
 export = (app: Application) => {
   app.on('*', async (context: Context) => {
-    context.log({ event: context.event, action: context.payload.action })
+    context.log({
+      event: context.event,
+      action: context.payload.action,
+      payload: context.payload
+    })
   })
 }
